@@ -25,7 +25,7 @@ const Crop = () => {
         className="w-[100vw] h-[100vh] border-none origin-top-left"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
-        scrolling="no"
+        // scrolling="no"
         title="TV Display"
       />
     </div>

@@ -13,7 +13,7 @@ const Main = ({ tvSize, setTvSize, dimensions, getDimensions }) => {
   function getDimensions(
     diagonal,
     aspectRatioWidth = 16,
-    aspectRatioHeight = 9
+    aspectRatioHeight = 10
   ) {
     const aspectRatio = aspectRatioWidth / aspectRatioHeight;
     const height = Math.sqrt(diagonal ** 2 / (aspectRatio ** 2 + 1));
@@ -25,7 +25,7 @@ const Main = ({ tvSize, setTvSize, dimensions, getDimensions }) => {
     const newItem = {
       i: `item-${layout.length + 1}`,
       x: 0,
-      y: Math.min(layout.length * 2, 9 - 2),
+      y: Math.min(layout.length * 2, 10 - 2),
       w: 4,
       h: 3,
     };
@@ -36,7 +36,7 @@ const Main = ({ tvSize, setTvSize, dimensions, getDimensions }) => {
     localStorage.removeItem("savedMapping");
     const filteredLayout = newLayout.map((item) => ({
       ...item,
-      y: Math.min(item.y, 9 - item.h),
+      y: Math.min(item.y, 10 - item.h),
     }));
     setLayout(filteredLayout);
     localStorage.setItem("savedLayout", JSON.stringify(filteredLayout)); // Save to local storage

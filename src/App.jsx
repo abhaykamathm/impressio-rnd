@@ -12,6 +12,7 @@ import VideoWall from "./pages/Mask";
 import Crop from "./pages/Crop";
 import SplitLayoutGenerator from "./pages/SplitLayoutGenerator";
 import Cast from "./pages/Cast";
+import Test from "./pages/Test";
 
 function App() {
   return (
@@ -19,9 +20,10 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Crop />} />
-          <Route path="/grid" element={<Grid />} />
+          <Route path="/test" element={<Test />} />
+          {/* <Route path="/grid" element={<Grid />} /> */}
           <Route path="/encrypt" element={<EncryptionPage />} />
-          <Route path="/olympics" element={<Olympics />} />
+          {/* <Route path="/olympics" element={<Olympics />} /> */}
           <Route path="/split-casting" element={<SplitCasting />} />
           <Route path="/layout-builder" element={<LayoutBuilder />} />
           <Route path="/layout-mapper" element={<LayoutMapper />} />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import LZString from "lz-string";
 
@@ -10,7 +10,21 @@ const Output = () => {
   const layout = JSON.parse(LZString.decompressFromEncodedURIComponent(data));
 
   const gridWidth = window.innerWidth;
-  const rowHeight = window.innerHeight / 9;
+  const rowHeight = window.innerHeight / 10;
+
+  // Use useEffect to reload the page on viewport resize
+  useEffect(() => {
+    const handleResize = () => {
+      window.location.reload();
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <div
@@ -18,7 +32,7 @@ const Output = () => {
       style={{
         display: "grid",
         gridTemplateColumns: "repeat(12, 1fr)",
-        gridTemplateRows: `repeat(9, ${rowHeight}px)`,
+        gridTemplateRows: `repeat(10, ${rowHeight}px)`,
       }}
     >
       {layout.map((item) => (
@@ -37,7 +51,6 @@ const Output = () => {
               height="100%"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-              scrolling="no"
             ></iframe>
           ) : (
             <img

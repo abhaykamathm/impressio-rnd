@@ -32,7 +32,7 @@ const CanvasSection = ({
 
       if (screenWidth && screenHeight) {
         const calculatedGridWidth = screenWidth;
-        const calculatedRowHeight = screenHeight / 9;
+        const calculatedRowHeight = screenHeight / 10;
 
         setGridWidth(calculatedGridWidth);
         setRowHeight(calculatedRowHeight);
@@ -50,12 +50,12 @@ const CanvasSection = ({
       ref={canvasRef}
       className="w-full flex-1 bg-white shadow-md rounded-md"
     >
-      {/* <div className="w-full aspect-[16/9] flex relative"> */}
-      <Draggable bounds="parent">
+      <div className="w-full aspect-[16/9] flex justify-center items-center relative">
+      {/* <Draggable bounds="parent"> */}
         <div
           ref={layoutBuilderContainerRef}
           id="layout-builder-container"
-          className="w-[500px] h-[300px] border-2 border-indigo-300 rounded-md bg-gray-50"
+          className="w-[75%] h-[80%] border-2 border-indigo-300 rounded-md bg-gray-50"
         >
           <GridLayout
             className="layout"
@@ -66,7 +66,7 @@ const CanvasSection = ({
             onLayoutChange={onLayoutChange}
             isResizable
             isDraggable
-            maxRows={9}
+            maxRows={10}
             margin={[0, 0]} // Set uniform gap between grid items (10px)
             containerPadding={[20, 20]} // Set padding around the grid container (20px)
             isDroppable
@@ -88,12 +88,12 @@ const CanvasSection = ({
             ))}
           </GridLayout>
         </div>
-      </Draggable>
+      {/* </Draggable> */}
       {/* <VerticalDimension
           value={dimensions.height}
           length={layoutBuilderContainerRef.current?.clientHeight}
         /> */}
-      {/* </div> */}
+      </div>
       {/* <div className="mt-2">
         <HorizontalDimension
           value={dimensions.width}

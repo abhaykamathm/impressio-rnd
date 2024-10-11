@@ -28,7 +28,7 @@ const CanvasSection = ({
 
       if (screenWidth && screenHeight) {
         const calculatedGridWidth = screenWidth;
-        const calculatedRowHeight = screenHeight / 9;
+        const calculatedRowHeight = screenHeight / 10;
 
         setGridWidth(calculatedGridWidth);
         setRowHeight(calculatedRowHeight);
@@ -57,7 +57,7 @@ const CanvasSection = ({
             width={gridWidth}
             isResizable={false}
             isDraggable={false}
-            maxRows={9}
+            maxRows={10}
             margin={[0, 0]}
             containerPadding={[0, 0]}
             isDroppable={false}
